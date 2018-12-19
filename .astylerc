@@ -1,0 +1,20 @@
+# Bracket Style Options
+--style=kr
+# Tab Options
+--indent=spaces=4
+# Bracket Modify Options
+# Indentation Options
+--indent-preproc-block
+# Padding Options
+--break-blocks
+--pad-oper
+--pad-header
+--unpad-paren
+--align-pointer=name
+# Formatting Options
+--remove-brackets
+--convert-tabs
+# Other Options
+--suffix=none
+--preserve-date
+--lineend=linux
