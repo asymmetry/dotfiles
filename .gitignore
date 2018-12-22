@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/c,git,c++,linux,latex,cmake,python,fortran,jetbrains,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=c,git,c++,linux,latex,cmake,python,fortran,jetbrains,visualstudiocode
 
@@ -80,8 +79,8 @@ CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
-Testing
-Makefile
+#Testing
+#Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json

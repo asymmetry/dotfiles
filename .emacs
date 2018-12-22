@@ -107,12 +107,12 @@
 ; parentheses
 (use-package smartparens
   :hook
-  ((c-mode-common emacs-lisp-mode) . smartparens-mode)
+  ((c-mode-common emacs-lisp-mode python-mode) . smartparens-mode)
   :config
   (require 'smartparens-config))
 (use-package rainbow-delimiters
   :hook
-  ((c-mode-common emacs-lisp-mode) . rainbow-delimiters-mode))
+  ((c-mode-common emacs-lisp-mode python-mode) . rainbow-delimiters-mode))
 (show-paren-mode t)
 
 ; company-irony (code completion)
@@ -182,6 +182,11 @@
   (("\\.markdown\\'" . markdown-mode)
    ("\\.md\\'" . markdown-mode)
    ("README\\.md\\'" . gfm-mode)))
+
+; docker mode
+(use-package dockerfile-mode
+  :mode
+  ("Dockerfile\\'" . dockerfile-mode))
 
 ; auctex
 (use-package latex
