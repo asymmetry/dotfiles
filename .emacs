@@ -15,7 +15,7 @@
 ; edit
 (cua-mode t)
 (setq-default indent-tabs-mode nil)
-(setq tab-width 4)
+(setq-default tab-width 4)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-auto-revert-mode t)
 

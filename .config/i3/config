@@ -207,6 +207,7 @@ exec --no-startup-id compton -b
 exec --no-startup-id pasystray &
 exec --no-startup-id nm-applet &
 exec --no-startup-id xautolock -time 20 -locker "systemctl suspend"
+exec --no-startup-id caffeine &
 exec --no-startup-id redshift &
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id fcitx &
@@ -245,3 +246,7 @@ for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Fcitx-config-gtk3"] floating enable
+
+# autostart thunderbird and google-chrome
+exec --no-startup-id thunderbird
+exec --no-startup-id google-chrome-stable
