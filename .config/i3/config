@@ -202,7 +202,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle; notify-send 'toggle so
 bindsym XF86AudioMicMute exec "pactl set-source-mute 1 toggle; notify-send 'toggle microphone'"
 
 # autostart some applications
-exec_always --no-startup-id feh --bg-fill /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/archlinux/archlinux-simplyblack.png
 exec --no-startup-id compton -b
 exec --no-startup-id pasystray &
 exec --no-startup-id nm-applet &
@@ -221,14 +221,17 @@ bar {
     i3bar_command i3bar -t
     status_command i3status
     position bottom
+    tray_output primary
 }
 
 # set default workspace
 assign [class="Google-chrome"] $WS8
 assign [class="Thunderbird"] $WS7
 assign [class="Pcmanfm"] $WS6
+assign [class="Code"] $WS5
 
 # window settings
+for_window [workspace=$WS5] layout tabbed
 for_window [workspace=$WS6] layout tabbed
 for_window [workspace=$WS7] layout tabbed
 for_window [workspace=$WS8] layout tabbed
