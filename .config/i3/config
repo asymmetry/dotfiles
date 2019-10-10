@@ -248,7 +248,3 @@ for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Fcitx-config-gtk3"] floating enable
-
-# autostart thunderbird and google-chrome
-exec --no-startup-id thunderbird
-exec --no-startup-id google-chrome-stable

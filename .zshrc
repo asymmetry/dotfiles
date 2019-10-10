@@ -1,12 +1,6 @@
 # compdump path
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump"
 
-# history
-HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
-HISTSIZE=1000
-SAVEHIST=1000
-export HISTORY_IGNORE="(ls|la|ll|cd|cd -|pwd|exit|date|* --help)"
-
 # setup zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -31,6 +25,12 @@ if ! zgen saved; then
     # save
     zgen save
 fi
+
+# history
+export HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
+export HISTSIZE=2000
+export SAVEHIST=2000
+export HISTORY_IGNORE="(ls|la|ll|cd|cd -|pwd|exit|date|* --help)"
 
 # options
 setopt append_history
@@ -71,6 +71,8 @@ alias diff='diff -uNr --color=auto'
 alias du='du -h'
 alias df='df -h'
 alias sudo='sudo '
+
+alias vi='vim'
 
 alias pip='pip --no-cache-dir'
 alias pip2='pip2 --no-cache-dir'
