@@ -1,7 +1,4 @@
-all: astyle chrome compton conky fcitx emacs git i3 pylint x11 yapf zsh
-
-astyle: .astylerc
-	ln -srf $(PWD)/.astylerc $(HOME)/.astylerc
+all: chrome conky fcitx emacs git i3 picom pylint x11 yapf zsh
 
 chrome: .config/chrome-flags.conf
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
@@ -44,10 +41,6 @@ yapf: .config/yapf/style
 	[ -d $(HOME)/.config/yapf ] || mkdir -p $(HOME)/.config/yapf
 	ln -srf $(PWD)/.config/yapf/style $(HOME)/.config/yapf/style
 
-zsh: .zshrc .zgen/local/fishy.zsh-theme
-	if [[ ! -d $(HOME)/.zgen ]]; then \
-	    git clone 'https://github.com/tarjoilija/zgen.git' $(HOME)/.zgen; \
-	fi
-	[ -d $(HOME)/.zgen ] || mkdir -p $(HOME)/.zgen/local
-	ln -srf $(PWD)/.zgen/local/fishy.zsh-theme $(HOME)/.zgen/local/fishy.zsh-theme
+zsh: .zshrc .antigenrc
 	ln -srf $(PWD)/.zshrc $(HOME)/.zshrc
+	ln -srf $(PWD)/.antigenrc $(HOME)/.antigenrc

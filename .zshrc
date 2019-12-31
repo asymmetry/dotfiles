@@ -1,30 +1,7 @@
-# compdump path
-ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump"
-
-# setup zgen
-source "${HOME}/.zgen/zgen.zsh"
-
-if ! zgen saved; then
-    echo "Creating a zgen save"
-
-    zgen oh-my-zsh
-
-    # plugins
-    zgen oh-my-zsh plugins/colored-man-pages
-    zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/rsync
-    zgen oh-my-zsh plugins/z
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load zsh-users/zsh-completions src
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
-
-    # theme
-    zgen load ${HOME}/.zgen/local/fishy
-
-    # save
-    zgen save
-fi
+# setup antigen
+DOTFILES_PATH=~/.dotfiles
+source ${DOTFILES_PATH}/antigen/antigen.zsh
+antigen init .antigenrc
 
 # history
 export HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
