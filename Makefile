@@ -7,10 +7,6 @@ chrome: .config/chrome-flags.conf
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/chrome-flags.conf $(HOME)/.config/chrome-flags.conf
 
-compton: .config/compton.conf
-	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
-	ln -srf $(PWD)/.config/compton.conf $(HOME)/.config/compton.conf
-
 conky: .config/conky/conky.conf
 	[ -d $(HOME)/.config/conky ] || mkdir -p $(HOME)/.config/conky
 	ln -srf $(PWD)/.config/conky/conky.conf $(HOME)/.config/conky/conky.conf
@@ -30,6 +26,10 @@ i3: .config/i3/config .config/i3status/config
 	ln -srf $(PWD)/.config/i3/config $(HOME)/.config/i3/config
 	[ -d $(HOME)/.config/i3status ] || mkdir -p $(HOME)/.config/i3status
 	ln -srf $(PWD)/.config/i3status/config $(HOME)/.config/i3status/config
+
+picom: .config/picom.conf
+	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
+	ln -srf $(PWD)/.config/picom.conf $(HOME)/.config/picom.conf
 
 pylint: .config/pylintrc
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
