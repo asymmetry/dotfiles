@@ -1,7 +1,7 @@
 # setup antigen
-DOTFILES_PATH=~/.dotfiles
+DOTFILES_PATH=${HOME}/.dotfiles
 source ${DOTFILES_PATH}/antigen/antigen.zsh
-antigen init .antigenrc
+antigen init ${HOME}/.antigenrc
 
 # history
 export HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
