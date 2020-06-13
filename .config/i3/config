@@ -228,12 +228,16 @@ assign [class="Google-chrome"] $WS8
 assign [class="Thunderbird"] $WS7
 assign [class="Pcmanfm"] $WS6
 assign [class="Code"] $WS5
+assign [class="Microsoft Teams - Preview"] $WS9
+assign [class="Gnome-terminal"] $WS10
 
 # window settings
 for_window [workspace=$WS5] layout tabbed
 for_window [workspace=$WS6] layout tabbed
 for_window [workspace=$WS7] layout tabbed
 for_window [workspace=$WS8] layout tabbed
+for_window [workspace=$WS9] layout tabbed
+for_window [workspace=$WS10] layout tabbed
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -248,3 +252,4 @@ for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Fcitx-config-gtk3"] floating enable
+for_window [class="flameshot"] floating enable
