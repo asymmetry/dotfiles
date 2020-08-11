@@ -32,8 +32,9 @@ pylint: .config/pylintrc
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/pylintrc $(HOME)/.config/pylintrc
 
-x11: .Xresources .config/user-dirs.dirs
+x11: .Xresources .xprofile .config/user-dirs.dirs
 	ln -srf $(PWD)/.Xresources $(HOME)/.Xresources
+	ln -srf $(PWD)/.xprofile $(HOME)/.xprofile
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/user-dirs.dirs $(HOME)/.config/user-dirs.dirs
 

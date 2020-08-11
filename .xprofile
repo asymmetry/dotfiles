@@ -1,0 +1,6 @@
+picom -b &
+pasystray &
+clipit &
+fcitx &
+urxvtd -q -f &
+caffeine &
