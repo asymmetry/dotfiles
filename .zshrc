@@ -32,11 +32,15 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta'
 
 # customs
-export PATH="${HOME}/.bin:${PATH}"
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:${PATH}"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [[ -e "${HOME}/.bin" ]]; then
+    export PATH="${HOME}/.bin:${PATH}"
+fi
+if [[ -e "${HOME}/.pyenv" ]]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # aliases
 alias la='ls -A'
