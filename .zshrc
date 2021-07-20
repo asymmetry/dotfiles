@@ -41,6 +41,9 @@ if [[ -e "${HOME}/.pyenv" ]]; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+if [[ -e "${HOME}/.envs" ]]; then
+    source ${HOME}/.envs
+fi
 
 # aliases
 alias la='ls -A'
