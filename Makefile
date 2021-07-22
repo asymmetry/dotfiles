@@ -1,12 +1,20 @@
-all: chrome conky fcitx emacs git i3 picom pylint x11 yapf zsh
+all: chrome clipit conky dunst fcitx emacs git i3 picom pylint rofi x11 yapf zsh
 
 chrome: .config/chrome-flags.conf
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/chrome-flags.conf $(HOME)/.config/chrome-flags.conf
 
+clipit: .config/clipit/clipitrc
+	[ -d $(HOME)/.config/clipit ] || mkdir -p $(HOME)/.config/clipit
+	ln -srf $(PWD)/.config/clipit/clipitrc $(HOME)/.config/clipit/clipitrc
+
 conky: .config/conky/conky.conf
 	[ -d $(HOME)/.config/conky ] || mkdir -p $(HOME)/.config/conky
 	ln -srf $(PWD)/.config/conky/conky.conf $(HOME)/.config/conky/conky.conf
+
+dunst: .config/dunst/dunstrc
+	[ -d $(HOME)/.config/dunst ] || mkdir -p $(HOME)/.config/dunst
+	ln -srf $(PWD)/.config/dunst/dunstrc $(HOME)/.config/dunst/dunstrc
 
 emacs: .emacs
 	ln -srf $(PWD)/.emacs $(HOME)/.emacs
@@ -31,6 +39,10 @@ picom: .config/picom.conf
 pylint: .config/pylintrc
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/pylintrc $(HOME)/.config/pylintrc
+
+rofi: .config/rofi/config
+	[ -d $(HOME)/.config/rofi ] || mkdir -p $(HOME)/.config/rofi
+	ln -srf $(PWD)/.config/rofi/config $(HOME)/.config/rofi/config
 
 x11: .Xresources .xprofile .config/user-dirs.dirs
 	ln -srf $(PWD)/.Xresources $(HOME)/.Xresources
