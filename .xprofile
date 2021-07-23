@@ -1,7 +1,8 @@
+urxvtd -q -f &
 picom -b &
-pasystray &
+dunst &
+caffeine &
 clipit &
 fcitx &
-urxvtd -q -f &
-caffeine &
+pasystray &
 vorta &
