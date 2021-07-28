@@ -8,6 +8,8 @@ Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
+Rofi.dpi: 120
+
 URxvt.font: xft:fira mono:size=12
 URxvt.boldfont: xft:fira mono:size=12
 URxvt.boldMode: false

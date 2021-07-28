@@ -204,10 +204,15 @@ bindsym XF86AudioMicMute exec "pactl set-source-mute 1 toggle; notify-send 'togg
 # autostart some applications
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/archlinux/simple.png
-exec_always --no-startup-id nm-applet &
 exec --no-startup-id xautolock -time 20 -locker "systemctl suspend"
-exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id caffeine &
+exec --no-startup-id clipit &
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
+exec --no-startup-id fcitx &
+exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id nm-applet &
+exec --no-startup-id pasystray &
+exec --no-startup-id vorta &
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -218,20 +223,16 @@ bar {
 }
 
 # set default workspace
-assign [class="Google-chrome"] $WS8
-assign [class="Thunderbird"] $WS7
-assign [class="Pcmanfm"] $WS6
 assign [class="Code"] $WS5
-assign [class="Microsoft Teams - Preview"] $WS9
-assign [class="Gnome-terminal"] $WS10
+assign [class="Pcmanfm"] $WS6
+assign [class="Thunderbird"] $WS7
+assign [class="Google-chrome"] $WS8
 
 # window settings
 for_window [workspace=$WS5] layout tabbed
 for_window [workspace=$WS6] layout tabbed
 for_window [workspace=$WS7] layout tabbed
 for_window [workspace=$WS8] layout tabbed
-for_window [workspace=$WS9] layout tabbed
-for_window [workspace=$WS10] layout tabbed
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -241,10 +242,10 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [window_role="GtkFileChooserDialog"] move absolute center
 
+for_window [class="Fcitx-config-gtk3"] floating enable
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
-for_window [class="Fcitx-config-gtk3"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="vorta"] floating enable
