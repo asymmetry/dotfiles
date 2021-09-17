@@ -40,9 +40,9 @@ pylint: .config/pylintrc
 	[ -d $(HOME)/.config ] || mkdir -p $(HOME)/.config
 	ln -srf $(PWD)/.config/pylintrc $(HOME)/.config/pylintrc
 
-rofi: .config/rofi/config
+rofi: .config/rofi/config.rasi
 	[ -d $(HOME)/.config/rofi ] || mkdir -p $(HOME)/.config/rofi
-	ln -srf $(PWD)/.config/rofi/config $(HOME)/.config/rofi/config
+	ln -srf $(PWD)/.config/rofi/config.rasi $(HOME)/.config/rofi/config.rasi
 
 x11: .Xresources .xprofile .config/user-dirs.dirs
 	ln -srf $(PWD)/.Xresources $(HOME)/.Xresources
