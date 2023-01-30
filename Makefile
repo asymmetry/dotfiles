@@ -19,9 +19,6 @@ dunst: .config/dunst/dunstrc
 emacs: .emacs
 	ln -srf $(PWD)/.emacs $(HOME)/.emacs
 
-fcitx: .pam_environment
-	ln -srf $(PWD)/.pam_environment $(HOME)/.pam_environment
-
 git: .gitconfig .gitignore
 	ln -srf $(PWD)/.gitconfig $(HOME)/.gitconfig
 	ln -srf $(PWD)/.gitignore $(HOME)/.gitignore
