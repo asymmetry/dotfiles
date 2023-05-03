@@ -43,12 +43,21 @@ if [[ -e "${HOME}/.pyenv" ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 if [[ -e "${HOME}/.profile" ]]; then
-    source ${HOME}/.profile
+    source "${HOME}/.profile"
 fi
 
 # aliases
-alias la='ls -A'
-alias ll='ls -lAh'
+function lsmod {
+  if [[ "x${PWD}" == "x${HOME}" ]]; then
+    /bin/ls --color=tty --ignore='Documents' $@
+  else
+    /bin/ls --color=tty $@
+  fi
+}
+
+alias ls='lsmod'
+alias la='lsmod -A'
+alias ll='lsmod -lAh'
 alias cp='cp -a'
 alias rm='rm -ir'
 alias grep='grep -nI --color=auto'
