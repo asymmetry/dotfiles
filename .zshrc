@@ -42,8 +42,14 @@ if [[ -e "${HOME}/.pyenv" ]]; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+if [[ -e "${HOME}/.cargo/bin" ]]; then
+    export PATH="${HOME}/.cargo/bin:${PATH}"
+fi
 if [[ -e "${HOME}/.profile" ]]; then
     source "${HOME}/.profile"
+fi
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    . "$(code --locate-shell-integration-path zsh)"
 fi
 
 # aliases
