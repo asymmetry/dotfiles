@@ -45,6 +45,10 @@ fi
 if [[ -e "${HOME}/.cargo/bin" ]]; then
     export PATH="${HOME}/.cargo/bin:${PATH}"
 fi
+if [[ -e "${HOME}/.nvm" ]]; then
+    export NVM_DIR="${HOME}/.nvm"
+    [[ -e "${NVM_DIR}/nvm.sh" ]] && . "${NVM_DIR}/nvm.sh"
+fi
 if [[ -e "${HOME}/.profile" ]]; then
     source "${HOME}/.profile"
 fi
